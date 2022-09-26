@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- META -->
+    <title>JS Notice Board Demo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Experimental JS Signage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+
+    <!-- ICONS -->
+    <link rel="icon" href="notice-board.png" type="image/png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="white">
+    <link rel="apple-touch-icon" href="notice-board.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JS POS">
+    <meta name="msapplication-TileImage" content="notice-board.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <!-- MANIFEST & WORKER -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("main.js");
+    }
+    </script>
+
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="notice-board.css"/>
+    <script src="notice-board.js"></script>
+  </head>
+  <body>
+    <h2 id="h">College Notice Board</h2>
+     <div class="item1">
+    <a class="icon" href="notice.html"><bold> Home </bold></a>
+    <a class="icon" href="pdf.html" target="_parent"> <bold>Notices</bold> </a>
+   <!-- <a class="icon" href="contactus.html" target="_blank"> Contact us </a>-->
+    
+  </div>
+  <br><br>
+    <!-- (A) ADD/UPDATE NOTE -->
+    <form id="noteform">
+      <input type="text" id="notetxt" required disabled/>
+      <input type="submit" id="notego" value="Add" disabled/>
+    </form>
+
+    <!-- (B) NOTICE BOARD -->
+    <div id="board"></div>
+
+    <!-- (C) SIMPLE INSTRUCTIONS
+    Enter text and "add" to create a new note.
+    Drag-and-drop a note to rearrange.
+    Double click on a note to edit.
+    Hover over a note and click on "X" to delete it.
+    -->
+  </body>
+</html>
